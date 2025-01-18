@@ -10,7 +10,9 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  Stack,
   Typography,
+  useMediaQuery,
   useTheme,
 } from "@mui/material";
 import { useState } from "react";
@@ -25,6 +27,7 @@ import ImportContactsOutlinedIcon from "@mui/icons-material/ImportContactsOutlin
 import ComputerOutlinedIcon from "@mui/icons-material/ComputerOutlined";
 import WbIridescentIcon from "@mui/icons-material/WbIridescent";
 import { Close, ExpandMore } from "@mui/icons-material";
+import Links from "./Links";
 
 export default function Header3() {
   const [state, setState] = useState({
@@ -60,6 +63,7 @@ export default function Header3() {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
+          mt:5
         }}
       >
         <Box>
@@ -129,9 +133,24 @@ export default function Header3() {
             </MenuItem>
           </Menu>
         </Box>
-        <IconButton onClick={toggleDrawer("top", true)}>
-          <MenuIcon />
-        </IconButton>
+        {useMediaQuery('(min-width:1100px)') && (
+          <Stack direction={"row"} gap={3} alignItems={"center"}>
+            <Links title={"Home"}/>
+            <Links title={"Mega menu"}/>
+            <Links title={"Full screen Menu"}/>
+            <Links title={"Pages"}/>
+            <Links title={"User account"}/>
+            <Links title={"Vendor account"}/>
+          </Stack>
+        )}
+        {
+           useMediaQuery('(max-width:1000px)') && (
+            <IconButton onClick={toggleDrawer("top", true)}>
+            <MenuIcon />
+          </IconButton>
+           )
+        }
+        
         <Drawer
           anchor={"top"}
           open={state["top"]}

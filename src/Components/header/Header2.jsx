@@ -22,10 +22,17 @@ const Search = styled('div')(({ theme }) => ({
   },
   marginRight: theme.spacing(2),
   marginLeft: 0,
-  minwidth: '300px',
+  width: '260px',
   [theme.breakpoints.up('sm')]: {
     marginLeft: theme.spacing(1),
-    width: 'auto',
+    width: '330px',
+  },
+  [theme.breakpoints.down('sm')]: {
+    
+    width: '160px',
+    fontSize:'10px',
+     
+    
   },
 }));
 const SearchIconWrapper = styled('div')(({ theme }) => ({

@@ -1,9 +1,9 @@
 import Header2 from "./Components/header/Header2"
 import Header1 from "./Components/header/Header1"
 import Header3 from "./Components/header/Header3"
- 
 import { Box, CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
+import Hero from "./Components/hero/Hero";
  
  
  
@@ -20,11 +20,10 @@ function App() {
         theme={theme}
       >
         <CssBaseline />
-
         <Header1 />
         <Header2 />
         <Header3 />
-
+        <Hero/>
         <Box
           bgcolor={
             // @ts-ignore
